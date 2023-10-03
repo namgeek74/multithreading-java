@@ -1,24 +1,36 @@
 package com.dsa;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class Main {
     public static final int MAX_PASSWORD = 9999;
+    public static int num;
 
     public static void main(String[] args) {
-        Random random = new Random();
-        Vault vault = new Vault(random.nextInt(MAX_PASSWORD));
-        List<Thread> threads = new ArrayList<>();
-        threads.add(new AscendingHackerThread(vault));
-        threads.add(new DescendingHackerThread(vault));
-        threads.add(new PoliceThread());
-        for (Thread thread :
-                threads) {
-            thread.start();
-        }
+        // Random random = new Random();
+        // Vault vault = new Vault(random.nextInt(MAX_PASSWORD));
+        // List<Thread> threads = new ArrayList<>();
+        // threads.add(new AscendingHackerThread(vault));
+        // threads.add(new DescendingHackerThread(vault));
+        // threads.add(new PoliceThread());
+        // for (Thread thread :
+        //         threads) {
+        //     thread.start();
+        // }
+        System.out.println("Default int: " + num);
+        int x = 1;
+        int y = 2;
+        int result = sum(x, y);
+    }
 
+    private static int sum(int a, int b) {
+        // int num2;
+        // System.out.println("Default local reference int: " + num2);
+        int s = a + b;
+        return s;
     }
 
     private static class Vault {
