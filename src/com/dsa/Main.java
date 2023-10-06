@@ -2,14 +2,18 @@ package com.dsa;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 
 public class Main {
     public static final int MAX_PASSWORD = 9999;
     public static int num;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // Random random = new Random();
         // Vault vault = new Vault(random.nextInt(MAX_PASSWORD));
         // List<Thread> threads = new ArrayList<>();
@@ -20,10 +24,20 @@ public class Main {
         //         threads) {
         //     thread.start();
         // }
-        System.out.println("Default int: " + num);
-        int x = 1;
-        int y = 2;
-        int result = sum(x, y);
+        // DataRaceExample.main();
+        Set set = new HashSet();
+        set.add(1);
+        set.add(2);
+        set.add(1);
+        set.add(3);
+        System.out.println("hash code: " + set.hashCode());
+        System.out.println("Set: " + set);
+
+        Map<String, String> map = new HashMap();
+        map.put("nam", "Nam");
+        map.put("nam1", "Nam 1");
+        map.put("nam", "Nam 234");
+        System.out.println("Map: " + map);
     }
 
     private static int sum(int a, int b) {
